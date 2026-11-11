@@ -112,7 +112,6 @@ th{font-size:12px;color:var(--sub);font-weight:600}
 <div class="wrap">
 <header>
   <h1>2026年10月 <em>乳饮优质笔记</em>看板</h1>
-  <p>2026年10月发布的乳饮相关优质笔记 · 点赞/收藏/评论为累计值</p>
 </header>
 <div id="trend"></div>
 
@@ -183,8 +182,7 @@ function list(){let r=N.filter(n=>tab==='deal'?n.r1:n.r2);
  const s=document.getElementById('sort').value;
  if(s==='rank')r.sort((a,b)=>tab==='deal'?a.r1-b.r1:a.r2-b.r2);else r.sort((a,b)=>b[s]-a[s]);return r}
 function card(n){
- const rk=`<div class="rk">${n.r1?`<span class="d">成交TOP50</span>`:''}${n.r2?`<span class="e">曝光TOP50</span>`:''}</div>`;
- return `<div class="card"><div class="cv"><img src="${n.img}" loading="lazy" alt="">${rk}${n.video?'<span class="vd">视频</span>':''}</div>
+  return `<div class="card"><div class="cv"><img src="${n.img}" loading="lazy" alt="">${n.video?'<span class="vd">视频</span>':''}</div>
  <div class="bd"><div class="tt"><a href="https://www.xiaohongshu.com/explore/${n.id}" target="_blank" rel="noreferrer">${n.title}</a></div>
  <div class="mt">${n.acct}</div>
  <div class="tags"><span class="tg c">${n.ct}</span></div>
